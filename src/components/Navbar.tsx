@@ -2,6 +2,11 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 
 const Navbar = () => {
+
+    const handleLogout = () => {
+        console.log('TODO: handle')
+    }
+
     return (
         <nav className="container-fluid navbar navbar-expand-sm navbar-dark bg-dark">
 
@@ -31,14 +36,14 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
-                    <NavLink
-                        className="nav-item nav-link"
-                        to="/login"
-                    >
+                    <span className="nav-item nav-link text-info">
+                        Francisco Marín
+                    </span>
+                    <button onClick={handleLogout} className="btn nav-item nav-link">
                         Logout
-                    </NavLink>
+                    </button>
                 </ul>
             </div>
         </nav>
