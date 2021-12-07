@@ -1,4 +1,4 @@
-const WarnerPage = () => {
+export const WarnerPage = () => {
     return (
         <div>
             Dc Page
@@ -6,4 +6,3 @@ const WarnerPage = () => {
     );
 };
 
-export default WarnerPage;

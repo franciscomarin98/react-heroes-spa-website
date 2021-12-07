@@ -1,4 +1,4 @@
-const MarvelPage = () => {
+export const MarvelPage = () => {
     return (
         <div>
             Marvel Page
@@ -6,4 +6,3 @@ const MarvelPage = () => {
     );
 };
 
-export default MarvelPage;

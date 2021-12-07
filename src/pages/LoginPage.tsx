@@ -1,4 +1,4 @@
-const LoginPage = () => {
+export const LoginPage = () => {
     return (
         <div>
             Login Page
@@ -6,4 +6,3 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;

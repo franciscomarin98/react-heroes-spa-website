@@ -1,10 +1,7 @@
-import MarvelPage from "../pages/MarvelPage";
-import WarnerPage from "../pages/WarnerPage";
-import SearchPage from "../pages/SearchPage";
-
 import {Route, Routes} from "react-router-dom";
-import Navbar from "../components/Navbar";
-import HeroPage from "../pages/HeroPage";
+
+import {HeroPage, MarvelPage, SearchPage, WarnerPage} from "../pages";
+import {Navbar} from "../components";
 
 const DashboardRouter = () => {
     return (
@@ -12,7 +9,7 @@ const DashboardRouter = () => {
             <Navbar/>
             <div className="container-fluid">
                 <Routes>
-                    <Route path="/heroe/:id" element={<HeroPage/>} />
+                    <Route path="/heroe/:id" element={<HeroPage/>}/>
                     <Route path="dc-heroes" element={<WarnerPage/>}/>
                     <Route path="marvel-heroes" element={<MarvelPage/>}/>
                     <Route path="search-heroe" element={<SearchPage/>}/>

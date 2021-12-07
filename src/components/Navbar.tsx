@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 
-const Navbar = () => {
+export const Navbar = () => {
 
     const handleLogout = () => {
         console.log('TODO: handle')
@@ -49,5 +49,3 @@ const Navbar = () => {
         </nav>
     )
 }
-
-export default Navbar;
