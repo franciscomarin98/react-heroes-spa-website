@@ -9,9 +9,9 @@ const DashboardRouter = () => {
             <Navbar/>
             <div className="container mt-2">
                 <Routes>
-                    <Route path="/heroe/:id" element={<HeroPage/>}/>
                     <Route path="dc-heroes" element={<WarnerPage/>}/>
                     <Route path="marvel-heroes" element={<MarvelPage/>}/>
+                    <Route path="/heroe/:id" element={<HeroPage/>}/>
                     <Route path="search-heroe" element={<SearchPage/>}/>
 
                     <Route path="/" element={<MarvelPage/>}/>

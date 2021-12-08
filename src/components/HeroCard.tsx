@@ -32,7 +32,7 @@ export const HeroCard = ({hero}: HeroProps) => {
                         </p>
 
 
-                        <Link to={`/hero/${hero.id}`}>
+                        <Link to={`/heroe/${hero.id}`}>
                             Más...
                         </Link>
 
