@@ -1,21 +1,23 @@
 import {useForm} from "../hooks/useForm";
-import {FormEvent} from "react";
+import {FormEvent, useMemo} from "react";
 import queryString from 'query-string';
 import {getHeroByName} from "../helpers/hero.helpers";
-import {HeroCard} from "../components";
+import {Alert, HeroCard} from "../components";
 import {useLocation, useNavigate} from "react-router-dom";
+import {Hero} from "../types/hero.types";
 
 export const SearchPage = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { q = '' } = queryString.parse(location.search);
+    const {q = ''} = queryString.parse(location.search);
     const {formState, handleInputChange} = useForm({
         search: q
     });
 
-    const heroesFiltered = getHeroByName(q);
+    // @ts-ignore
+    const heroesFiltered = useMemo(() => getHeroByName(q), [q]);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -32,7 +34,7 @@ export const SearchPage = () => {
 
                     <form onSubmit={handleSubmit}>
                         <input type="text"
-                               placeholder="Search hero"
+                               placeholder="Write something here"
                                className="form-control"
                                name="search"
                                autoComplete="off"
@@ -50,8 +52,14 @@ export const SearchPage = () => {
                 <div className="col-7">
                     <h4>Results</h4>
                     <hr/>
+
                     {
-                        heroesFiltered.map(hero => (
+                        (q === '') ? <Alert className={'info'} msg={'Search a hero'}/>
+                            : (heroesFiltered.length === 0) && <Alert className={'danger'} msg={'No results found'}/>
+                    }
+
+                    {
+                        heroesFiltered.map((hero: Hero) => (
                             <HeroCard key={hero.id} hero={hero}/>
                         ))
                     }

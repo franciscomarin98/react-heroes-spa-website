@@ -9,6 +9,6 @@ export const getHeroByID = (id: string) => {
     return heroes.find(hero => hero.id === id);
 }
 
-export const getHeroByName = (name: string): Hero[] => {
+export const getHeroByName = (name: string = ''): Hero[] => {
     return (name.length > 0) ? heroes.filter(hero => hero.superhero.toLowerCase().includes(name)) : [];
 }
