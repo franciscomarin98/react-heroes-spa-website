@@ -8,6 +8,8 @@ export const Navbar = () => {
     const context = useContext(AuthContext);
 
     const handleLogout = () => {
+        // @ts-ignore
+        context.dispatch({type: 'LOGOUT'});
         navigate('/login', {replace: true});
     }
 

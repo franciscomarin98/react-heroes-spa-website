@@ -1,10 +1,15 @@
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../auth/authContext";
+import {useContext} from "react";
 
 export const LoginPage = () => {
-
     const navigate = useNavigate();
+    const context = useContext(AuthContext);
 
     const handleLogin = () => {
+
+        // @ts-ignore
+        context.dispatch({type: 'LOGIN', payload: {name: 'Francisco'}});
         navigate('/', {replace: true});
     }
 
