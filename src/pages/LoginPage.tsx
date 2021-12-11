@@ -10,7 +10,8 @@ export const LoginPage = () => {
 
         // @ts-ignore
         context.dispatch({type: 'LOGIN', payload: {name: 'Francisco'}});
-        navigate('/', {replace: true});
+        const lastPath = localStorage.getItem('lastPath') || '/';
+        navigate(lastPath, {replace: true});
     }
 
     return (

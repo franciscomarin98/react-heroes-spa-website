@@ -1,3 +1,7 @@
 import {createContext} from "react";
 
-export const AuthContext = createContext({});
+type IContext = {
+    user?: any;
+}
+
+export const AuthContext = createContext<IContext>({});
